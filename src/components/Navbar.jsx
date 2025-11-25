@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logoImage from '../assets/a52b4807ebf467aa3ee5.jpg';
 
 const Navbar = () => {
   const location = useLocation();
@@ -29,36 +30,17 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full bg-white shadow-sm">
+    <nav className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm shadow-sm">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo Section */}
-          <div className="flex items-center relative">
-            <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-primary-lightest/50 via-primary-lightest/30 to-transparent -z-10">
-              <div className="absolute inset-0 opacity-40" style={{
-                backgroundImage: `radial-gradient(circle at 20% 50%, rgba(197,28,98,0.2) 0%, transparent 50%),
-                                 radial-gradient(circle at 60% 30%, rgba(197,28,98,0.15) 0%, transparent 50%)`
-              }}></div>
-            </div>
-            <Link to="/" className="flex items-center gap-2 z-10 relative pl-6">
-              {/* House Icon */}
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-green-600"
-              >
-                <path
-                  d="M3 12L5 10M5 10L12 3L19 10M5 10V20C5 20.5523 5.44772 21 6 21H9M19 10L21 12M19 10V20C19 20.5523 18.5523 21 18 21H15M9 21C9.55228 21 10 20.5523 10 20V16C10 15.4477 10.4477 15 11 15H13C13.5523 15 14 15.4477 14 16V20C14 20.5523 14.4477 21 15 21M9 21H15"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="text-gray-800 text-xl font-raleway-regular">Care Home</span>
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center">
+              <img
+                src={logoImage}
+                alt="XUÂN HOA Logo"
+                className="h-12 md:h-14 lg:h-16 w-auto object-contain"
+              />
             </Link>
           </div>
 
